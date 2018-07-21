@@ -2,7 +2,7 @@ SURAIMU FINDER
 ===================
 ![demo](demo.gif)
 
-Fast Emoji PNG Finder on Android 4.4 (KitKat)
+:smile: Fast Noto Emoji (KitKat) Finder
 
 Source: [Emoji - Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji)
 
