@@ -1,0 +1,28 @@
+{
+  "name": "suraimu-finder",
+  "version": "0.0.1",
+  "description": "Android noto-emoji (KitKat) finder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/castaneai/suraimu-finder.git"
+  },
+  "author": "castaneai <castaneai@castaneai.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/castaneai/suraimu-finder/issues"
+  },
+  "homepage": "https://github.com/castaneai/suraimu-finder#readme",
+  "dependencies": {
+    "@google-cloud/datastore": "^1.4.1",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "flatmap": "0.0.3",
+    "npm": "^6.2.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
