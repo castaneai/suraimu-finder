@@ -14,12 +14,7 @@ async function save() {
 function createDatastoreEntity(item) {
     return {
         key: datastore.key([kind, item.text]),
-        data: {
-            text: item.text,
-            description: item.description,
-            keywords: item.keywords,
-            url: item.url,
-        },
+        data: item,
     }
 }
 
@@ -49,6 +44,7 @@ async function scrape() {
             'text': text,
             'description': desc,
             'keywords': [text].concat(extractKeywords(desc)),
+            'thumbnail_url': src,
             'url': src.replace('48px-', '512px-'),
         }
     }).get();
