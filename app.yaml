@@ -1,4 +1,2 @@
-service: suraimu-finder
+service: suraimu
 runtime: nodejs8
-skip_files:
- - client/
