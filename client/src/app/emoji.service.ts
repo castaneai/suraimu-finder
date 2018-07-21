@@ -9,7 +9,7 @@ export class EmojiService {
 
     searchEmoji(keyword: string): Promise<Emoji[]> {
         return this.httpClient
-            .get<Emoji[]>(`http://localhost:8080/find?q=${keyword}`)
+            .get<Emoji[]>(`/find?q=${keyword}`)
             .toPromise();
     }
 }

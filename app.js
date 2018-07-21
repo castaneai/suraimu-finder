@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const datastore = require('@google-cloud/datastore')();
 
+app.use(express.static('public'));
+
 app.get('/find', (req, res) => {
-    const keyword = req.param('q');
+    const keyword = req.query.q;
     if (!keyword) {
         return res.status(406).send();
     }
