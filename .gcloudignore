@@ -3,4 +3,4 @@ LICENSE
 demo.gif
 build.js
 /client
-/node_modules
+node_modules/

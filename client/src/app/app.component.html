@@ -10,7 +10,7 @@
   </p>
 
   <!-- search form -->
-  <form class="search-form">
+  <form class="search-form" onsubmit="return false">
     <mat-form-field>
       <input #keyword id="keyword" type="text" matInput placeholder="キーワードを入力！（例：face）" (keyup)="search(keyword.value)">
     </mat-form-field>
