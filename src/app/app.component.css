@@ -1,0 +1,51 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1 img {
+    width: auto;
+    height: 1.6em;
+    vertical-align: middle;
+}
+
+.search-form > * {
+    width: 100%;
+    font-size: x-large;
+}
+
+.search-result {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-result li {
+    box-sizing: border-box;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    flex: 10%;
+    padding: 0.2em;
+    word-break: break-all;
+}
+
+.search-result li .desc {
+    font-size: small;
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    margin: 1.5em 0;
+    line-height: 24px;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}

@@ -10,14 +10,6 @@ Source: [Emoji - Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji)
 ## Develop
 
 ```sh
-# develop server
-cd suraimu-finder/
-npm install
-npm start
-
-# develop client
-npm install -g @angular/cli
-cd suraimu-finder/client/
 npm install
 npm start
 ```
@@ -25,9 +17,19 @@ npm start
 
 ## Deploy
 
+### Import seed (only once)
+
 ```sh
-cd client/
-ng build --prod --output-path ../public
-cd ../
-gcloud app deploy
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/datastore-owner-service-account-key.json
+cd functions
+npm install
+node build.js
+```
+
+### Deploy to Firebase hosting
+
+```sh
+npm install -g @angular/cli firebase-tools
+ng build --prod --output-path public
+firebase deploy
 ```
