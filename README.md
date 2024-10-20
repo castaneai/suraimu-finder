@@ -7,29 +7,17 @@ SURAIMU FINDER
 Source: [Emoji - Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji)
 
 
-## Develop
+## Import seed (only once)
 
 ```sh
-npm install
-npm start
+deno run --unstable-kv --allow-env --allow-read --allow-net scraping.ts
 ```
 
 
 ## Deploy
 
-### Import seed (only once)
-
 ```sh
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/datastore-owner-service-account-key.json
-cd functions
-npm install
-node build.js
-```
-
-### Deploy to Firebase hosting
-
-```sh
-npm install -g @angular/cli firebase-tools
-ng build --prod --output-path public
-firebase deploy
+deno task deploy
+# or
+deno task deploy-prod
 ```

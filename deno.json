@@ -1,0 +1,23 @@
+{
+  "tasks": {
+    "dev": "deno run --unstable-kv --allow-net --watch src/main.tsx",
+    "deploy": "deployctl deploy --project suraimu-finder",
+    "deploy-prod": "deployctl deploy --prod --project suraimu-finder"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxFragmentFactory": "Fragment",
+    "jsxImportSource": "npm:hono@4.6.5/jsx"
+  },
+  "deploy": {
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [
+      "deno.json",
+      "src/*.ts",
+      "src/*.tsx"
+    ],
+    "entrypoint": "src/main.tsx"
+  }
+}
