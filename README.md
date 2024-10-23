@@ -11,7 +11,7 @@ Source: [Emoji - Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji)
 
 ```sh
 export DENO_KV_ACCESS_TOKEN=ddp_***
-export export DENO_KV_DATABASE_ID=<YOUR_KV_DATABASE_ID_HERE>
+export DENO_KV_DATABASE_ID=<YOUR_KV_DATABASE_ID_HERE>
 deno task importdata
 ```
 
