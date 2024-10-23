@@ -7,10 +7,12 @@ SURAIMU FINDER
 Source: [Emoji - Wikimedia Commons](https://commons.wikimedia.org/wiki/Emoji)
 
 
-## Import seed (only once)
+## Import data (only once)
 
 ```sh
-deno run --unstable-kv --allow-env --allow-read --allow-net scraping.ts
+export DENO_KV_ACCESS_TOKEN=ddp_***
+export export DENO_KV_DATABASE_ID=<YOUR_KV_DATABASE_ID_HERE>
+deno task importdata
 ```
 
 

@@ -1,6 +1,7 @@
+_fresh/
+
 ### Deno template
 /.idea/
-/.vscode/
 
 /node_modules
 

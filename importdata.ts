@@ -76,14 +76,12 @@ const kv = await Deno.openKv(`https://api.deno.com/databases/${databaseId}/conne
 const thoth = createThothClient(kv, 3)
 await thoth.flash()
 
-const source = (new TextDecoder("utf-8")).decode(await Deno.readFile("source.html"))
-const gen = fetchEmojis(source)
-for (const emoji of take(gen, 3)) {
+const source = (new TextDecoder("utf-8")).decode(await Deno.readFile("importdatasource.html"))
+for (const emoji of fetchEmojis(source)) {
     console.log(`${emoji.title} (${emoji.keywords.join(' ')})`)
-    await thoth.register(emoji.keywords, emoji.title)
     await kv.set(["emojis", emoji.title], emoji)
+    await thoth.register(emoji.keywords, emoji.title, true)
 }
-const keys = Object.keys(await thoth.search("face")).map(k => ["emojis", k])
-for (const result of await kv.getMany(keys)) {
-    console.log(result)
-}
+
+console.log('thoth analyzing...')
+await thoth.analysis()
