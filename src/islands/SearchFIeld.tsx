@@ -7,11 +7,14 @@ export default function SearchField() {
     const [keyword, setKeyword] = useState('')
     const debounced = useDebounce(keyword, 500)
     const [results, setResults] = useState<Emoji[]>([])
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         if (!debounced) return
+        setIsLoading(true)
         const ctr = new AbortController()
         fetch(`/find?q=${encodeURIComponent(debounced)}`, { signal: ctr.signal }).then(async (resp)=> {
+            setIsLoading(false)
             setResults(await resp.json())
         })
 
@@ -21,7 +24,8 @@ export default function SearchField() {
     return <div class="search">
         <input type="text" placeholder="キーワードを入力！（例：face）" onInput={(e: JSX.TargetedEvent<HTMLInputElement, Event>) => setKeyword(e.currentTarget.value)}  />
         <ul class="search-result">
-            {results.map(emoji => <li key={emoji.title}>
+            {isLoading ? <li>searching '{debounced}'...</li> :
+            results.map(emoji => <li key={emoji.title}>
                 <a href={emoji.imageUrl} target="_blank">
                     <img src={emoji.imageUrl.replace("512px-", "48px-")} alt={emoji.title} />
                     <p className="desc">{emoji.keywords.join(" ")}</p>
